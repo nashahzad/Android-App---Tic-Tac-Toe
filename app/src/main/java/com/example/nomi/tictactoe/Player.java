@@ -57,6 +57,25 @@ public class Player {
         return false;
     }
 
+    public void reset(){
+        counter = 0;
+
+        a0 = false;
+        a1 = false;
+        a2 = false;
+
+        b0 = false;
+        b1 = false;
+        b2 = false;
+
+        c0 = false;
+        c1 = false;
+        c2 = false;
+    }
+
+    public void counterIncrement(){
+        counter++;
+    }
 
     public boolean isA0() {
         return a0;
