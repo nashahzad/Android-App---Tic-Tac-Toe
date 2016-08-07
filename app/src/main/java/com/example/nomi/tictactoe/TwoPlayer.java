@@ -75,6 +75,10 @@ public class TwoPlayer extends AppCompatActivity {
         else if(counter == 9){
             TextView textView = (TextView) findViewById(R.id.textView2);
             textView.setText("Tie!!!");
+
+            Button button = (Button) findViewById(R.id.resetButton);
+            button.setEnabled(true);
+            button.setText("RESET?");
         }
 
         else if(counter % 2 == 1){
