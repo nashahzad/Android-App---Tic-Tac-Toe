@@ -73,79 +73,48 @@ public class Player {
         c2 = false;
     }
 
-    public void counterIncrement(){
+    public void isA0(){
+        a0 = true;
         counter++;
     }
 
-    public boolean isA0() {
-        return a0;
+    public void isA1(){
+        a1 = true;
+        counter++;
     }
 
-    public void setA0(boolean a0) {
-        this.a0 = a0;
+    public void isA2(){
+        a2 = true;
+        counter++;
     }
 
-    public boolean isA1() {
-        return a1;
+    public void isB0(){
+        b0 = true;
+        counter++;
     }
 
-    public void setA1(boolean a1) {
-        this.a1 = a1;
+    public void isB1(){
+        b1 = true;
+        counter++;
     }
 
-    public boolean isA2() {
-        return a2;
+    public void isB2(){
+        b2 = true;
+        counter++;
     }
 
-    public void setA2(boolean a2) {
-        this.a2 = a2;
+    public void isC0(){
+        c0 = true;
+        counter++;
     }
 
-    public boolean isB0() {
-        return b0;
+    public void isC1(){
+        c1 = true;
+        counter++;
     }
 
-    public void setB0(boolean b0) {
-        this.b0 = b0;
-    }
-
-    public boolean isB1() {
-        return b1;
-    }
-
-    public void setB1(boolean b1) {
-        this.b1 = b1;
-    }
-
-    public boolean isB2() {
-        return b2;
-    }
-
-    public void setB2(boolean b2) {
-        this.b2 = b2;
-    }
-
-    public boolean isC0() {
-        return c0;
-    }
-
-    public void setC0(boolean c0) {
-        this.c0 = c0;
-    }
-
-    public boolean isC1() {
-        return c1;
-    }
-
-    public void setC1(boolean c1) {
-        this.c1 = c1;
-    }
-
-    public boolean isC2() {
-        return c2;
-    }
-
-    public void setC2(boolean c2) {
-        this.c2 = c2;
+    public void isC2(){
+        c2 = true;
+        counter++;
     }
 }
