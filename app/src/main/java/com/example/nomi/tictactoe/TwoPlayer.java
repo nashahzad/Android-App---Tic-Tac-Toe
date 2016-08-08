@@ -4,12 +4,16 @@ package com.example.nomi.tictactoe;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class TwoPlayer extends AppCompatActivity {
     Player playerOne;
@@ -17,6 +21,8 @@ public class TwoPlayer extends AppCompatActivity {
 
     //counter to count number of tiles taken
     short counter = 0;
+
+    public static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +34,27 @@ public class TwoPlayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
         getWindow().getDecorView().setBackgroundResource(R.color.twoPlayerColor);
+
+        startVoiceRecognitionActivity();
+    }
+
+    public void startVoiceRecognitionActivity() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                "Speech recognition demo");
+        startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == VOICE_RECOGNITION_REQUEST_CODE && resultCode == RESULT_OK) {
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            if(matches.contains("hello")){
+                TextView textView = (TextView) findViewById(R.id.textView2);
+                textView.setText("Voice heard :)");
+            }
+        }
     }
 
     public void disableAllButtons(){
